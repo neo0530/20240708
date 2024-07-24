@@ -12,7 +12,7 @@ class Program
 {
     private static readonly Logger Logger = LogManager.GetCurrentClassLogger(); //初始化記錄器
 
-    static async Task Main(string[] args) //async 允許使用 await 關鍵字
+    static async Task Main(string[] args) //async非同步，允許使用 await 關鍵字。task返回一個任數。
     {
         var configuration = new ConfigurationBuilder() 
             .SetBasePath(Directory.GetCurrentDirectory()) //設置配置文件的基路徑為當前目錄
@@ -83,4 +83,30 @@ public class Setting
     public int Type { get; set; }
     public int IntervalSeconds { get; set; }
     public DateTime ScheduledTime { get; set; }
+}
+
+public class IntervalJob : IJob
+{
+    private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
+    public Task Execute(IJobExecutionContext context)
+    {
+        var currentTime = DateTime.Now;
+        Logger.Info($"Current Time: {currentTime}");
+        Console.WriteLine($"Current Time: {currentTime}");
+        return Task.CompletedTask;
+    }
+}
+
+public class SpecificTimeJob : IJob
+{
+    private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
+    public Task Execute(IJobExecutionContext context)
+    {
+        var currentTime = DateTime.Now;
+        Logger.Info($"Current Time: {currentTime}");
+        Console.WriteLine($"Current Time: {currentTime}");
+        return Task.CompletedTask;
+    }
 }
