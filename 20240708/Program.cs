@@ -18,7 +18,7 @@ class Program
         ////未指定要執行的 type，則程式將執行所有配置中指定的任務
         var configuration = new ConfigurationBuilder() 
             .SetBasePath(Directory.GetCurrentDirectory()) //設置配置文件的基路徑為當前目錄
-            .AddJsonFile("jsconfig1.json")
+            .AddJsonFile("jsconfig1.json") //檔案配置名稱
             .Build();
 
         var settings = configuration.GetSection("Settings").Get<Setting[]>();
@@ -27,17 +27,22 @@ class Program
         {
             if (setting.Type == 1)
             {
-                await ScheduleIntervalTask(setting.IntervalSeconds);
+                await ScheduleIntervalTask(setting.IntervalSeconds); //每隔幾秒
             }
             else if (setting.Type == 2)
             {
-                await ScheduleSpecificTimeTask(setting.ScheduledTime);
+                await ScheduleSpecificTimeTask(setting.ScheduledTime); //指定時間
             }
         }
 
         Console.ReadLine();
     }
 
+    /// <summary>
+    /// 每隔?秒就記錄
+    /// </summary>
+    /// <param name="intervalSeconds"></param>
+    /// <returns></returns>
     private static async Task ScheduleIntervalTask(int intervalSeconds)
     {
         // 實現每間隔指定時間打印當下時間並記錄至Log
@@ -45,21 +50,29 @@ class Program
         IScheduler scheduler = await StdSchedulerFactory.GetDefaultScheduler();
         await scheduler.Start();
 
+        //工作詳細信息定義
+        //WithIdentity 方法用來設置這個工作的唯一標識符（ID）和工作組
         IJobDetail job = JobBuilder.Create<IntervalJob>()
-            .WithIdentity("intervalJob", "group1")
+            .WithIdentity("intervalJob", "group1")  //工作的名稱,組名
             .Build();
 
+        //設定觸發器
         ITrigger trigger = TriggerBuilder.Create()
-            .WithIdentity("intervalTrigger", "group1")
-            .StartNow()
+            .WithIdentity("intervalTrigger", "group1") //觸發器的名稱,組名
+            .StartNow() //設定觸發器從當前時間開始立即啟動
             .WithSimpleSchedule(x => x
-                .WithIntervalInSeconds(intervalSeconds)
-                .RepeatForever())
+                .WithIntervalInSeconds(intervalSeconds) //設定觸發器的執行間隔，單位為秒。intervalSeconds 是從設定檔或程式碼中取得的間隔時間
+                .RepeatForever()) //設定觸發器永遠重複執行，除非手動停止
             .Build();
 
         await scheduler.ScheduleJob(job, trigger);
     }
 
+    /// <summary>
+    /// 於指定時間記錄
+    /// </summary>
+    /// <param name="scheduledTime"></param>
+    /// <returns></returns>
     private static async Task ScheduleSpecificTimeTask(DateTime scheduledTime)
     {
         // 實現特定時間打印當下時間並記錄至Log
@@ -67,7 +80,7 @@ class Program
         IScheduler scheduler = await StdSchedulerFactory.GetDefaultScheduler();
         await scheduler.Start();
 
-        IJobDetail job = JobBuilder.Create<SpecificTimeJob>()
+        IJobDetail job = JobBuilder.Create<SpecificTimeJob>() //為指定時間
             .WithIdentity("specificTimeJob", "group2")
             .Build();
 
@@ -82,7 +95,13 @@ class Program
 
 public class Setting
 {
+    /// <summary>
+    /// Type1每秒、Type2指定時間。沒指定type，都執行。
+    /// </summary>
     public int Type { get; set; }
+    /// <summary>
+    /// 每隔?秒
+    /// </summary>
     public int IntervalSeconds { get; set; }
     public DateTime ScheduledTime { get; set; }
 }
