@@ -14,6 +14,8 @@ class Program
 
     static async Task Main(string[] args) //async非同步，允許使用 await 關鍵字。task返回一個任數。
     {
+        //使用 ConfigurationBuilder 讀取 JSON 設定檔並解析成 Setting 類別的數組
+        ////未指定要執行的 type，則程式將執行所有配置中指定的任務
         var configuration = new ConfigurationBuilder() 
             .SetBasePath(Directory.GetCurrentDirectory()) //設置配置文件的基路徑為當前目錄
             .AddJsonFile("jsconfig1.json")
