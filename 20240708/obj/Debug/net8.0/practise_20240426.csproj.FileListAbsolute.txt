@@ -1,0 +1,4 @@
+C:\Users\Tiffany\source\repos\practise_20240426\practise_20240426\obj\Debug\net8.0\practise_20240426.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tiffany\source\repos\practise_20240426\practise_20240426\obj\Debug\net8.0\practise_20240426.AssemblyInfoInputs.cache
+C:\Users\Tiffany\source\repos\practise_20240426\practise_20240426\obj\Debug\net8.0\practise_20240426.AssemblyInfo.cs
+C:\Users\Tiffany\source\repos\practise_20240426\practise_20240426\obj\Debug\net8.0\practise_20240426.csproj.CoreCompileInputs.cache

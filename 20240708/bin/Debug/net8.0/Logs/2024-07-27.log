@@ -1,0 +1,26 @@
+2024-07-27 22:47:03.5833|INFO|Quartz.Impl.StdSchedulerFactory|Default Quartz.NET properties loaded from embedded resource file
+2024-07-27 22:47:03.8432|INFO|Quartz.Core.SchedulerSignalerImpl|Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-07-27 22:47:03.8432|INFO|Quartz.Core.QuartzScheduler|Quartz Scheduler created
+2024-07-27 22:47:03.8432|INFO|Quartz.Simpl.RAMJobStore|RAMJobStore initialized.
+2024-07-27 22:47:03.8445|INFO|Quartz.Impl.StdSchedulerFactory|Quartz Scheduler 3.11.0.0 - 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-07-27 22:47:03.8445|INFO|Quartz.Impl.StdSchedulerFactory|Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-07-27 22:47:03.8445|INFO|Quartz.Impl.StdSchedulerFactory|Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-07-27 22:47:03.8445|INFO|Quartz.Core.QuartzScheduler|Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2024-07-27 22:47:03.8631|INFO|Quartz.Impl.StdSchedulerFactory|Default Quartz.NET properties loaded from embedded resource file
+2024-07-27 22:47:03.8631|INFO|Quartz.Core.QuartzScheduler|Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2024-07-27 22:47:03.9099|INFO|20240708.IntervalJob|Current Time: 2024/7/27 下午 10:47:03
+2024-07-27 22:47:03.9099|INFO|20240708.SpecificTimeJob|Current Time: 2024/7/27 下午 10:47:03
+2024-07-27 22:47:08.8581|INFO|20240708.IntervalJob|Current Time: 2024/7/27 下午 10:47:08
+2024-07-27 22:50:33.0749|INFO|Quartz.Impl.StdSchedulerFactory|Default Quartz.NET properties loaded from embedded resource file
+2024-07-27 22:50:33.3708|INFO|Quartz.Core.SchedulerSignalerImpl|Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-07-27 22:50:33.3708|INFO|Quartz.Core.QuartzScheduler|Quartz Scheduler created
+2024-07-27 22:50:33.3842|INFO|Quartz.Simpl.RAMJobStore|RAMJobStore initialized.
+2024-07-27 22:50:33.3842|INFO|Quartz.Impl.StdSchedulerFactory|Quartz Scheduler 3.11.0.0 - 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-07-27 22:50:33.3842|INFO|Quartz.Impl.StdSchedulerFactory|Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-07-27 22:50:33.3842|INFO|Quartz.Impl.StdSchedulerFactory|Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-07-27 22:50:33.3926|INFO|Quartz.Core.QuartzScheduler|Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2024-07-27 22:50:33.4090|INFO|Quartz.Impl.StdSchedulerFactory|Default Quartz.NET properties loaded from embedded resource file
+2024-07-27 22:50:33.4090|INFO|Quartz.Core.QuartzScheduler|Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2024-07-27 22:50:33.4601|INFO|20240708.IntervalJob|Current Time: 2024/7/27 下午 10:50:33
+2024-07-27 22:50:45.0163|INFO|20240708.SpecificTimeJob|Current Time: 2024/7/27 下午 10:50:45
+2024-07-27 22:50:48.4084|INFO|20240708.IntervalJob|Current Time: 2024/7/27 下午 10:50:48
